@@ -214,7 +214,7 @@ function picker(){const w=h('div'),pv=h('div'),g=h('div','cg'),draw=()=>pv.repla
 function home(msg){if(!msg&&/^PASTE/.test(API_URL))msg='⚠ URL backend belum diisi. Buka index.html lalu isi API_URL.';clean();music(false);setTheme('sky');$.classList.remove('wide');
  const f1=fld('🎮','Kode game (6 angka)','numeric',6),f2=fld('👤','Nama kamu',null,20),b=h('button','big','Masuk ▶'),c=h('div','card');
  if(PARAM.code)f1.i.value=PARAM.code;b.onclick=()=>join(f1.i.value.trim(),f2.i.value.trim(),b);c.append(f1,f2,picker(),b);if(msg)c.appendChild(h('div','err',msg));
- const mas=h('div','mas'),sg=h('div','sign');sg.append(h('b','','🏭 5R di Tempat Kerja'),h('br'),'📦 Ringkas — pilah yang perlu',h('br'),'🗂️ Rapi — tata & beri label',h('br'),'🧹 Resik — bersihkan',h('br'),'🔧 Rawat — jaga standar',h('br'),'💪 Rajin — disiplin');mas.append(av('c5|helm|🧹|#ffcf33',220,true),sg);
+ const mas=h('div','mas'),sg=h('div','sign');sg.append(h('b','','🏭 5R di Tempat Kerja'),h('br'),'📦 Ringkas — pilah yang perlu',h('br'),'🗂️ Rapi — tata & beri label',h('br'),'🧹 Resik — bersihkan',h('br'),'🔧 Rawat — jaga standar',h('br'),'💪 Rajin — disiplin');mas.append(av('c5||🧹|#ffcf33',220,true),sg);
  const a=h('details','card');a.appendChild(h('summary','','🔑 Masuk Admin'));const pf=fld('🔑','Kode admin (4 angka)','numeric',4);pf.i.type='password';
  const nb=h('button','big','Buat permainan'),eb=h('button','s','Buka permainan lama (isi kode game di atas)');eb.style.color='#16324a';
  nb.onclick=async()=>{PIN=pf.i.value.trim();try{admin(await api('createGame',PIN,DEF))}catch(e){alert(String(e.message||e).replace(/^Error: /,''))}};
